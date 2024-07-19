@@ -21,9 +21,7 @@ public class JobController {
     private CreateJobUserCase createJobUserCase;
 
     @PostMapping
-    public ResponseEntity<Void> create(@Valid @RequestBody JobEntity jobEntity, HttpServletRequest request){
-        var companyId = request.getAttribute("company_id");
-        jobEntity.setCompanyId(UUID.fromString(companyId.toString()));
+    public ResponseEntity<Void> create(@Valid @RequestBody JobEntity jobEntity){
         this.createJobUserCase.execute(jobEntity);
         return ResponseEntity.ok().build();
     }

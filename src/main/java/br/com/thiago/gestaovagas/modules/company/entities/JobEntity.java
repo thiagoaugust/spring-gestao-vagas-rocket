@@ -2,6 +2,7 @@ package br.com.thiago.gestaovagas.modules.company.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
@@ -9,6 +10,7 @@ import java.util.UUID;
 
 @Entity(name = "job")
 @Data
+@Setter
 public class JobEntity {
 
     @Id
