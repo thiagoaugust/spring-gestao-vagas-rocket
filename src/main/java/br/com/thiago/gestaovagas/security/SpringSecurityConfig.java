@@ -21,7 +21,8 @@ public class SpringSecurityConfig {
                 .authorizeHttpRequests(auth -> {
                     auth.requestMatchers("/candidate").permitAll();
                     auth.requestMatchers("/company").permitAll();
-                    auth.requestMatchers("/auth/company").permitAll();
+                    auth.requestMatchers("/company/auth").permitAll();
+                    auth.requestMatchers("/candidate/auth").permitAll();
                     auth.anyRequest().authenticated();
                 }).addFilterBefore(securityFilter, BasicAuthenticationFilter.class);
         return httpSecurity.build();
